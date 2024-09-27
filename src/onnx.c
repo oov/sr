@@ -91,7 +91,7 @@ bool print_dimensions(OrtTensorTypeAndShapeInfo const *const type_info) {
   r = true;
 cleanup:
   if (st != NULL) {
-    fprintf(stderr, "Error(%d): %s\n", g_ort->GetErrorCode(st), g_ort->GetErrorMessage(st));
+    fprintf(stderr, "Error(%u): %s\n", g_ort->GetErrorCode(st), g_ort->GetErrorMessage(st));
     g_ort->ReleaseStatus(st);
   }
   if (dims != NULL) {
@@ -188,7 +188,7 @@ void print_names(OrtSession *session) {
 
 cleanup:
   if (st != NULL) {
-    fprintf(stderr, "Error(%d): %s\n", g_ort->GetErrorCode(st), g_ort->GetErrorMessage(st));
+    fprintf(stderr, "Error(%u): %s\n", g_ort->GetErrorCode(st), g_ort->GetErrorMessage(st));
     g_ort->ReleaseStatus(st);
   }
   if (type_info != NULL) {
@@ -208,7 +208,7 @@ void print_tensor_dimensions(OrtValue const *const tensor) {
   print_dimensions(type_info);
 cleanup:
   if (st != NULL) {
-    fprintf(stderr, "Error(%d): %s\n", g_ort->GetErrorCode(st), g_ort->GetErrorMessage(st));
+    fprintf(stderr, "Error(%u): %s\n", g_ort->GetErrorCode(st), g_ort->GetErrorMessage(st));
     g_ort->ReleaseStatus(st);
   }
   if (type_info != NULL) {

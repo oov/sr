@@ -85,6 +85,7 @@ target_compile_options(sr_intf INTERFACE
   -Wno-used-but-marked-unused
   -Wno-unsafe-buffer-usage
   -Wno-switch-default
+  -Wno-pre-c11-compat
   -ffunction-sections
   -fdata-sections
   -flto
